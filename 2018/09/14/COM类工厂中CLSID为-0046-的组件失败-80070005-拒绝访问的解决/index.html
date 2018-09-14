@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="Windows SERVICE 环境下 COM类工厂中CLSID为{…0046}的组件失败 80070005 拒绝访问的解决 使用下面这条语句的时候报80070005 拒绝访问。下面来介绍我解决这个问题所走过的坑1new Microsoft.Office.Interop.Excel.Application();">
+<meta name="description" content="Windows SERVICE 环境下 COM类工厂中CLSID为{…0046}的组件失败 80070005 拒绝访问的解决使用下面这条语句的时候报80070005 拒绝访问。下面来介绍我解决这个问题所走过的坑1new Microsoft.Office.Interop.Excel.Application();">
 <meta property="og:type" content="article">
 <meta property="og:title" content="COM类工厂中CLSID为{...0046}的组件失败 80070005 拒绝访问的解决">
 <meta property="og:url" content="http://waiwing.top/2018/09/14/COM类工厂中CLSID为-0046-的组件失败-80070005-拒绝访问的解决/index.html">
 <meta property="og:site_name" content="waiwing&#39;s Blog">
-<meta property="og:description" content="Windows SERVICE 环境下 COM类工厂中CLSID为{…0046}的组件失败 80070005 拒绝访问的解决 使用下面这条语句的时候报80070005 拒绝访问。下面来介绍我解决这个问题所走过的坑1new Microsoft.Office.Interop.Excel.Application();">
+<meta property="og:description" content="Windows SERVICE 环境下 COM类工厂中CLSID为{…0046}的组件失败 80070005 拒绝访问的解决使用下面这条语句的时候报80070005 拒绝访问。下面来介绍我解决这个问题所走过的坑1new Microsoft.Office.Interop.Excel.Application();">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-09-14T13:48:49.432Z">
+<meta property="og:updated_time" content="2018-09-14T13:52:00.590Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="COM类工厂中CLSID为{...0046}的组件失败 80070005 拒绝访问的解决">
-<meta name="twitter:description" content="Windows SERVICE 环境下 COM类工厂中CLSID为{…0046}的组件失败 80070005 拒绝访问的解决 使用下面这条语句的时候报80070005 拒绝访问。下面来介绍我解决这个问题所走过的坑1new Microsoft.Office.Interop.Excel.Application();">
+<meta name="twitter:description" content="Windows SERVICE 环境下 COM类工厂中CLSID为{…0046}的组件失败 80070005 拒绝访问的解决使用下面这条语句的时候报80070005 拒绝访问。下面来介绍我解决这个问题所走过的坑1new Microsoft.Office.Interop.Excel.Application();">
 
 
 
@@ -299,9 +299,7 @@
       
 
       
-        <h1 id="Windows-SERVICE-环境下-COM类工厂中CLSID为-…0046-的组件失败-80070005-拒绝访问的解决"><a href="#Windows-SERVICE-环境下-COM类工厂中CLSID为-…0046-的组件失败-80070005-拒绝访问的解决" class="headerlink" title="Windows SERVICE 环境下 COM类工厂中CLSID为{…0046}的组件失败 80070005 拒绝访问的解决"></a>Windows SERVICE 环境下 COM类工厂中CLSID为{…0046}的组件失败 80070005 拒绝访问的解决</h1><blockquote>
-<p>使用下面这条语句的时候报80070005 拒绝访问。下面来介绍我解决这个问题所走过的坑<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">new Microsoft.Office.Interop.Excel.Application();</span><br></pre></td></tr></table></figure></p>
-</blockquote>
+        <h1 id="Windows-SERVICE-环境下-COM类工厂中CLSID为-…0046-的组件失败-80070005-拒绝访问的解决"><a href="#Windows-SERVICE-环境下-COM类工厂中CLSID为-…0046-的组件失败-80070005-拒绝访问的解决" class="headerlink" title="Windows SERVICE 环境下 COM类工厂中CLSID为{…0046}的组件失败 80070005 拒绝访问的解决"></a>Windows SERVICE 环境下 COM类工厂中CLSID为{…0046}的组件失败 80070005 拒绝访问的解决</h1><p>使用下面这条语句的时候报80070005 拒绝访问。下面来介绍我解决这个问题所走过的坑<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">new Microsoft.Office.Interop.Excel.Application();</span><br></pre></td></tr></table></figure></p>
 <a id="more"></a>
 <h2 id="在百度搜索到了一些解决办法，原文链接"><a href="#在百度搜索到了一些解决办法，原文链接" class="headerlink" title="在百度搜索到了一些解决办法，原文链接"></a>在百度搜索到了一些解决办法，<a href="https://blog.csdn.net/ghostbear/article/details/8247588" target="_blank" rel="noopener">原文链接</a></h2><ol>
 <li>控制面板－》管理工具－》组件服务－》计算机－》我的电脑－》DCom配置－》找到Microsoft Word文档</li>
@@ -316,15 +314,10 @@
 </li>
 <li>在专用池上设置站点而不是共享池。</li>
 <li>启用32位应用程序支持。</li>
-<li>将应用程序池的标识设置为LocalSystem。<blockquote>
-<p>去IIS把将应用程序池的标识设置为LocalSystem之后再次运行程序出现了新的报错，</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">原因是出现以下错误: 8000401a 因为配置标识不正确，系统无法开始服务器进程。请检查用户名和密码。 (异常来自 HRESULT:0x8000401A)。</span><br></pre></td></tr></table></figure>
-</blockquote>
-</li>
+<li>将应用程序池的标识设置为LocalSystem。</li>
 </ol>
-<h2 id="回到起点"><a href="#回到起点" class="headerlink" title="回到起点"></a>回到起点</h2><blockquote>
-<p>回到了第一个解决办法的第三点，选择交互式用户改为<strong>下列用户选项</strong>然后输入正确的当前登录的管理员帐户和正确密码，再次运行程序，就大结局了~~！！！！（ps:第一次写博客排版真烂………(逃</p>
-</blockquote>
+<p>去IIS把将应用程序池的标识设置为LocalSystem之后再次运行程序出现了新的报错，<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">原因是出现以下错误: 8000401a 因为配置标识不正确，系统无法开始服务器进程。请检查用户名和密码。 (异常来自 HRESULT:0x8000401A)。</span><br></pre></td></tr></table></figure></p>
+<h2 id="回到起点"><a href="#回到起点" class="headerlink" title="回到起点"></a>回到起点</h2><p>回到了第一个解决办法的第三点，选择交互式用户改为<strong>下列用户选项</strong>然后输入正确的当前登录的管理员帐户和正确密码，再次运行程序，就大结局了~~！！！！（ps:第一次写博客排版真烂………(逃</p>
 
       
     </div>
